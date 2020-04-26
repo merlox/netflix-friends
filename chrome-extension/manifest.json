@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Watch movies and series with friends at the exact same time",
     "manifest_version": 2,
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js ; object-src 'self'",
     "browser_action": {
       "default_popup": "index.html"
     },
@@ -13,7 +13,7 @@
     "content_scripts": [
       {
         "matches": ["https://*.netflix.com/*"],
-        "js": ["socket.io.js", "contentScript.js"],
+        "js": ["contentScript.js"],
         "css": ["index.css"]
       }
     ]

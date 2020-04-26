@@ -1,0 +1,8 @@
+// Tutorial: This works only from contentScript to popup
+// -> chrome.runtime.sendMessage({ code })
+// This works from popup to contentScript
+// chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+//     chrome.tabs.sendMessage(tabs[0].id, {
+//         <YOUR_PARAMETERS_GO_HERE>
+//     })
+// })

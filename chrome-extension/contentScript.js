@@ -1,29 +1,11 @@
-const url = 'https://3.135.96.94'
-const socket = io(url)
-let joinCode
-
-console.log('Merunas ------------ content script inserted')
 chrome.runtime.onMessage.addListener(req => {
-    joinCode = req.code
     switch (req.action) {
         case 'play':
-            socket.emit('play-request', { code: joinCode })
+            playNetflixVideo()
             break
         case 'pause':
-            socket.emit('pause-request', { code: joinCode })
+            pauseNetflixVideo()
             break
-    }
-})
-
-socket.on('start-video', msg => {
-    if (msg.code == joinCode) {
-        playNetflixVideo()
-    }
-})
-
-socket.on('pause-video', msg => {
-    if (msg.code == joinCode) {
-        pauseNetflixVideo()
     }
 })
 
@@ -40,3 +22,5 @@ function pauseNetflixVideo () {
         selector.click()
     }
 }
+
+console.log('Merunas content scripts initialized')
