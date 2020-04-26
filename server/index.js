@@ -1,4 +1,4 @@
-const port = 8000
+const port = 80
 const io = require('socket.io')(port)
 
 io.on('connection', socket => {
@@ -9,3 +9,5 @@ io.on('connection', socket => {
         io.emit('pause-video', { code: req.code })
     })
 })
+
+console.log('Server started at port', port)
