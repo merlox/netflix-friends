@@ -1,4 +1,4 @@
-const url = 'http://3.135.96.94'
+const url = 'https://3.135.96.94'
 const socket = io(url)
 let joinCode
 

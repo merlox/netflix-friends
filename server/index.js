@@ -1,4 +1,4 @@
-const port = 80
+const port = 8000
 const io = require('socket.io')(port)
 
 io.on('connection', socket => {
