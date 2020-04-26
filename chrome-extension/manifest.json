@@ -1,0 +1,20 @@
+{
+    "name": "Netflix Friends Chrome Extension",
+    "version": "1.0",
+    "description": "Watch movies and series with friends at the exact same time",
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "browser_action": {
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://*.netflix.com/*"],
+        "js": ["socket.io.js", "contentScript.js"],
+        "css": ["index.css"]
+      }
+    ]
+  }
