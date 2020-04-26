@@ -27,8 +27,6 @@ socket.on('pause-video', msg => {
     }
 })
 
-socket.on()
-
 function playNetflixVideo () {
     const selector = document.querySelector("#appMountPoint button.touchable.PlayerControls--control-element.nfp-button-control.default-control-button.button-nfplayerPlay")
     if (selector) {
